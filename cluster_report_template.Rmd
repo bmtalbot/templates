@@ -214,4 +214,4 @@ ggsave('ML_tree.png', units = "in", width = 8.5, height = 10)
 
 ### Methods
 
-The figures shown here were generated using sequence data processed with the MASPHL Genomic Analysis v1.0 workflow, which is based upon the cluster analysis pipeline from the [Monroe workflow](https://github.com/StaPH-B/staphb_toolkit/tree/dev). The workflow used here calls [Mafft](https://mafft.cbrc.jp/alignment/software/) to perform multiple-sequence alignment of all genomes provided and generates a pairwise-snp distance matrix with [snp-dists](https://github.com/tseemann/snp-dists) and a maximum-likelihood phylogeneitc tree with [IQ-Tree](http://www.iqtree.org/). Output from snp-dists and IQ-Tree are curated into a single pdf report.
+The workflow used here calls [Mafft](https://mafft.cbrc.jp/alignment/software/) to perform multiple-sequence alignment of all genomes provided and generates a pairwise-snp distance matrix with [snp-dists](https://github.com/tseemann/snp-dists) and a maximum-likelihood phylogeneitc tree with [IQ-Tree](http://www.iqtree.org/). Output from snp-dists and IQ-Tree are curated into a single pdf report.
