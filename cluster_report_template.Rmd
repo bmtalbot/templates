@@ -23,7 +23,7 @@ urlcolor: purplepeopleeater
 
 <!-- header content -->
 <!-- Uncomment the line of code below to include a header -->
-\fancyhead[R]{\Huge MASPHL Genomic Analysis\\
+\fancyhead[R]{\Huge Genomic Analysis\\
 \Large `r paste(Sys.Date())`}
 
 <!-- create red header line -->
