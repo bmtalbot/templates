@@ -48,8 +48,7 @@ library(phytools)
 library(viridisLite)
 library(viridis)
 library(tidyverse)
-library(rmarkdown)
-library(knitr)
+
 ## Figure size
 # get date
 date <- Sys.Date()
