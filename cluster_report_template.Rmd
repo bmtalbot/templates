@@ -7,8 +7,8 @@ header-includes:
     - \usepackage{fontspec}
     - \usepackage{xcolor}
     - \geometry{left = 0.5in,right = 0.5in}
-mainfont: Roboto
-sansfont: Roboto
+#mainfont: Roboto
+#sansfont: Roboto
 urlcolor: purplepeopleeater
 ---
 <!-- define color and adjust lengths for header and footer-->
