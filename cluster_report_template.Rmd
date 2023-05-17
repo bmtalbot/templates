@@ -140,7 +140,7 @@ gheatmap(gtree, snp_mat,
     font.size = axis_font_size,
     colnames_angle = 90,
     #rownames_angle = 0,
-    colnames_offset_y = col_offset,
+    colnames_offset_y = col_offset) +
     #rownames_offset_x = row_offset) +
 # set heatmap colourbar colors and limits
 scale_fill_viridis(limits = c(1,(max(snp_mat)+1)),
