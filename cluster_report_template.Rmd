@@ -80,6 +80,13 @@ legend_text_size <- 6
 colourbar_height <- 0.5
 # width of heatmap colourbar
 colourbar_width <- 7
+# heatmap cell font size
+fontsize = 12
+# headmap cell heights
+cellheight = 20 
+
+
+
 ```
 
 ```{r tree-plot-defaults, echo = FALSE, message = FALSE, warning = FALSE}
@@ -127,40 +134,44 @@ if(nrow(snp_mat) > 32) tree_offset <- 30
 if(nrow(snp_mat) > 32) row_offset <- -29
 ```
 
-```{r plot-tree-and-heatmap, echo = FALSE, message = FALSE, warning = FALSE, fig.width = 8}
+```{r plot-heatmap, echo = FALSE, message = FALSE, warning = FALSE, fig.width = 8}
+
+pheatmap::pheatmap(as.matrix(snp_mat), color = viridis(20),  display_numbers = TRUE, number_format = "%.0f", fontsize_number= fontsize, cellheight= cellheight)
+
 # ggtree will often crop the figure too small; subtract from ymin and add to ymax to fix this
-ymin <- min(gtree$data$y) - 5
-ymax <- max(gtree$data$y) + 1
+#ymin <- min(gtree$data$y) - 5
+#ymax <- max(gtree$data$y) + 1
 # main tree plotting function
-gheatmap(gtree, snp_mat,
-    width = heatmap_width,
-    offset = tree_offset,
+#gheatmap(gtree, snp_mat,
+ #   width = heatmap_width,
+  #  offset = tree_offset,
     #cell_labels = TRUE,
     #cell_font_size = cell_font_size,
-    font.size = axis_font_size,
-    colnames_angle = 90,
+   # font.size = axis_font_size,
+    #colnames_angle = 90,
     #rownames_angle = 0,
-    colnames_offset_y = col_offset) +
+    #colnames_offset_y = col_offset) +
     #rownames_offset_x = row_offset) +
 # set heatmap colourbar colors and limits
-scale_fill_viridis(limits = c(1,(max(snp_mat)+1)),
-    na.value = "white",
-    name = "SNPs",
-    guide = "colourbar") +
+#scale_fill_viridis(limits = c(1,(max(snp_mat)+1)),
+ #   na.value = "white",
+  #  name = "SNPs",
+   # guide = "colourbar") +
 # set plot y limits
-ylim(ymin,ymax) +
+#ylim(ymin,ymax) +
 # remove whitespace around plot and add legend
-theme(plot.margin = unit(c(0,0,0,0), "mm"),
-    legend.box = "horizontal",
-    legend.text = element_text(size = legend_text_size),
-    legend.title = element_text(size = legend_title_size),
-    legend.position = "bottom",
-    legend.margin = margin(0,0,0,0)) +
+#theme(plot.margin = unit(c(0,0,0,0), "mm"),
+ #   legend.box = "horizontal",
+  #  legend.text = element_text(size = legend_text_size),
+   # legend.title = element_text(size = legend_title_size),
+   # legend.position = "bottom",
+    #legend.margin = margin(0,0,0,0)) +
 # place heatmap colourbar beneath the heatmap (rather than beside)
-guides(fill = guide_colourbar(title.position = "top",
-    title.hjust = 0.5,
-    barheight = colourbar_height,
-    barwidth = colourbar_width))
+#guides(fill = guide_colourbar(title.position = "top",
+ #   title.hjust = 0.5,
+  #  barheight = colourbar_height,
+   # barwidth = colourbar_width))
+
 ggsave('SNP_heatmap.png', units = "in", width = 8.5, height = 10)
 snp_mat <- snp_mat[,ncol(snp_mat):1]
 snp_mat <- snp_mat[nrow(snp_mat):1,]
